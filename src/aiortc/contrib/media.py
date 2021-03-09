@@ -345,6 +345,8 @@ class MediaRecorder:
             else:
                 stream = self.__container.add_stream("libx264", rate=30)
                 stream.pix_fmt = "yuv420p"
+                stream.width = 1280
+                stream.height = 720
         self.__tracks[track] = MediaRecorderContext(stream)
 
     async def start(self):
